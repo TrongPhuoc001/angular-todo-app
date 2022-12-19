@@ -1,0 +1,47 @@
+.filter-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.radio-label{
+    border: 1px solid #FFD93D;
+    background-color: #fff;
+    padding: 5px;
+    cursor: pointer;
+    min-width: max-content;
+    flex:1;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 3px #FFD93D;
+}
+
+.label-active{
+    border: 1px solid #42C2FF;
+    box-shadow: 0px 1px 3px #42C2FF;
+}
+
+.label-complete{
+    border: 1px solid #C0EDA6;
+    box-shadow: 0px 1px 3px #C0EDA6;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+input[type="radio"]:checked + label{
+    background-color: #FFD93D;
+    color: #fff;
+}
+
+input[type="radio"]:checked + .label-active{
+    background-color: #42C2FF;
+    color: #fff;
+}
+
+input[type="radio"]:checked + .label-complete{
+    background-color: #C0EDA6;
+    color: #fff;
+}

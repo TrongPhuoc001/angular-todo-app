@@ -1,0 +1,4 @@
+<div class="todo-list" >
+    <app-todo-item *ngFor="let todo of filteredTodos;" [todo]="todo" ></app-todo-item>
+</div>
+<span>{{filteredTodos.length}}/{{todos.length}}</span>

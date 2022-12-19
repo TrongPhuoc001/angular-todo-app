@@ -1,0 +1,18 @@
+<span class="error-message">{{errorMessage}}</span>
+<form class="add-todo-form" [formGroup]="todoForm">
+    <div class="input-field">
+        <input id="add-todo-input" type="text" placeholder="Add new todo"formControlName="content" autocomplete="off">
+        <div class="datetime-field">
+            <input id="add-todo-time" type="time" formControlName="time">
+            <input id="add-todo-date" value="{{today}}" type="date" formControlName="date">
+        </div>
+    </div>
+    <div  *ngIf="isLoading; else button">
+        <div class="loader"></div>
+    </div>  
+    <ng-template #button>
+        <button class="btn-add" (click)="onSubmit()">Add </button>
+    </ng-template>
+
+</form>
+

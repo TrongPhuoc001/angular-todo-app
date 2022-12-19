@@ -1,0 +1,10 @@
+<div class="filter-container">
+    <input id="radio-all" type="radio" name="filter" checked (change)="onRadioChange(FilterOption.ALL)">
+    <label class="radio-label label-all" for="radio-all">All</label>
+
+    <input id="radio-active" type="radio" name="filter"   (change)="onRadioChange(FilterOption.ACTIVE)">
+    <label class="radio-label label-active" for="radio-active">Active</label>
+
+    <input id="radio-completed" type="radio" name="filter" (change)="onRadioChange(FilterOption.COMPLETED)">
+    <label class="radio-label label-complete" for="radio-completed">Completed</label>
+</div>

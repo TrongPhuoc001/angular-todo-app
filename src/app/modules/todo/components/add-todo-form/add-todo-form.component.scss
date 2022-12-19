@@ -1,0 +1,71 @@
+.add-todo-form {
+
+    width: 100%;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    font-family:'Zilla Slab', serif;
+
+    .input-field {
+        width: 100%;
+
+        .datetime-field {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            
+            input {
+                color: #42C2FF;
+                border: 1px solid #42C2FF;
+            }
+            input[type="date"]{
+                flex:1;
+            }
+        }
+    }
+    input[type="text"]{
+        padding: 2%;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+        background-color: #42C2FF;
+        color:#EFFFFD;
+        width: 96%;
+        border-radius: 3px;
+
+        &::placeholder {
+            color: #EFFFFD;
+            opacity: 0.5;
+        }
+    }
+
+    .btn-add{
+        padding: 0.5rem 1rem 0.5rem 1rem;
+        border: none;
+        font-size: 1rem;
+        outline: none;
+        background-color: #6acbf8;
+        color: #EFFFFD;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        &:hover {
+            background-color: #11abf3;
+        }
+    }
+
+    .loader {
+        border: 10px solid #EFFFFD; 
+        border-top: 10px solid #42C2FF; 
+        border-radius: 50%;
+        padding: 1rem;
+        animation: spin 2s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+}
+
