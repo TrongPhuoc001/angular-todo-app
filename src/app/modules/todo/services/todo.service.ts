@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 import { FilterOption } from '../shared/filter-option';
 
 import { BehaviorSubject, Observable } from 'rxjs';
-
-import { TodoModule } from '../todo.module';
 @Injectable({
   providedIn: 'root',
 })

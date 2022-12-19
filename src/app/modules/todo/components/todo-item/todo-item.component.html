@@ -1,28 +1,49 @@
-<div class="todo-item" [ngClass]="{'todo-item-checked' : todo.isCompleted, 'todo-item-notify' : checkNotify()&&!isEditting}"
-    id="todo-item-{{todo.id}}">
-    <div *ngIf="!isEditting; else editform" class="todo-content-container" [ngClass]="{'todo-content-checked' : todo.isCompleted}" (click)="onChecked()">
-        <span class="todo-content" id="todo-p-{{todo.id}}">{{todo.content}}</span>
-        <div class="todo-time" *ngIf="todo.isCompleted; else deadline">
-            done!
-        </div>
-        <ng-template #deadline>
-            <span id="todo-time todo-deadline">{{getTimeLeft()}}</span>
-        </ng-template>
-    </div>
-    <ng-template #editform>
-        <form class="edit-form" [formGroup]="editTodoForm" >
-            <input class="edit-input" type="text" value="{{todo.content}}" autocomplete="off"
-            (keyup.enter)="onEdit()" formControlName="content">
-            <input type="datetime-local" formControlName="datetime">
-        </form>
+<div
+  class="todo-item"
+  [ngClass]="{
+    'todo-item-checked': todo.isCompleted,
+    'todo-item-notify': checkNotify() && !isEditting
+  }"
+  id="todo-item-{{ todo.id }}"
+>
+  <div
+    *ngIf="!isEditting; else editform"
+    class="todo-content-container"
+    [ngClass]="{ 'todo-content-checked': todo.isCompleted }"
+    (click)="onChecked()"
+  >
+    <span class="todo-content" id="todo-p-{{ todo.id }}">{{
+      todo.content
+    }}</span>
+    <div class="todo-time" *ngIf="todo.isCompleted; else deadline">done!</div>
+    <ng-template #deadline>
+      <span id="todo-time todo-deadline">{{ getTimeLeft() }}</span>
     </ng-template>
-    
-    <div class="todo-buttons">
-        <button class="todo-button edit-button" (click)="onEdit()">
-            Edit
-        </button>
-        <button class="todo-button delete-button" (click)="onDelete()">
-            Del
-        </button> 
-    </div>
+  </div>
+  <ng-template #editform>
+    <form class="edit-form" [formGroup]="editTodoForm">
+      <input
+        class="edit-input"
+        type="text"
+        value="{{ todo.content }}"
+        autocomplete="off"
+        (keyup.enter)="onEdit()"
+        formControlName="content"
+      />
+      <input type="datetime-local" formControlName="datetime" />
+    </form>
+  </ng-template>
+
+  <div class="todo-buttons">
+    <button
+      class="todo-button edit-button"
+      *appEditable="todo.isCompleted"
+      appButton
+      (click)="onEdit()"
+    >
+      Edit
+    </button>
+
+    <button class="todo-button delete-button" (click)="onDelete()">Del</button>
+  </div>
 </div>

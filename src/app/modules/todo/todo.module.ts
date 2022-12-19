@@ -10,6 +10,8 @@ import { TodoItemComponent } from 'src/app/modules/todo/components/todo-item/tod
 import { TodoComponent } from './todo.component';
 import { ToastrModule } from 'ngx-toastr';
 import { TodoRoutingModule } from './todo-routing.module';
+import { ButtonDirective } from './shared/directives/button.directive';
+import { EditableDirective } from './shared/directives/editable.directive';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { TodoRoutingModule } from './todo-routing.module';
     FilterTodoComponent,
     TodoItemComponent,
     TodoComponent,
+    ButtonDirective,
+    EditableDirective,
   ],
   imports: [
     TodoRoutingModule,
